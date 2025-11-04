@@ -42,8 +42,3 @@ jobs:
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.t.outputs.BRANCH }}-${{ steps.t.outputs.SHA7 }}${{ steps.t.outputs.LATEST }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-
-      - name: Trigger Komodo Stack Deploy
-        if: github.ref_name == 'main'
-        run: |
-          curl -X POST http://31.97.21.162:9120/listener/github/stack/69096a35e91e8f2fcb11ca46/deploy
