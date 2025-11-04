@@ -18,7 +18,7 @@ services:
       - decideai-db
       - decideai-redis
     labels:
-      caddy: api.decideai.app
+      caddy: api.decideai.bonelesslab.com
       caddy.reverse_proxy: '{{upstreams 8080}}'
     networks:
       - caddy

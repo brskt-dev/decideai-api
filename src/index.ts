@@ -18,7 +18,7 @@ await fastify.register(healthRoutes);
 // Start server
 try {
   await fastify.listen({ port: env.port, host: env.host });
-  console.log(`Server listening on ${env.host}:${env.port}`);
+  console.log(`Servidor escutando em ${env.host}:${env.port}`);
 } catch (err) {
   fastify.log.error(err);
   process.exit(1);
