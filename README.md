@@ -39,26 +39,31 @@ Minimal backend scaffold built with Node.js 20, TypeScript, Fastify, PostgreSQL,
 ### Local Development
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Copy the example environment file:
+
 ```bash
 cp .env.example .env
 ```
 
 3. Run in development mode:
+
 ```bash
 npm run dev
 ```
 
 4. Build TypeScript:
+
 ```bash
 npm run build
 ```
 
 5. Start production build:
+
 ```bash
 npm start
 ```
@@ -76,6 +81,7 @@ The API will be available at `http://localhost:3000`.
 ## API Endpoints
 
 ### Health Check
+
 - **GET** `/api/health`
 - Returns: `{"status":"ok"}`
 
