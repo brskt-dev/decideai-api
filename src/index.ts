@@ -40,7 +40,11 @@ async function testConnections() {
     console.log('✅ PostgreSQL conectado com sucesso:', res.rows[0]);
     await db.end();
   } catch (err) {
-    console.error('❌ Erro ao conectar ao PostgreSQL:', err.message);
+    if (err instanceof Error) {
+      console.error('❌ Erro ao conectar ao PostgreSQL:', err.message);
+    } else {
+      console.error('❌ Erro ao conectar ao PostgreSQL:', err);
+    }
   }
 
   // Redis
@@ -55,7 +59,11 @@ async function testConnections() {
     console.log('✅ Redis conectado com sucesso:', pong);
     await redis.quit();
   } catch (err) {
-    console.error('❌ Erro ao conectar ao Redis:', err.message);
+    if (err instanceof Error) {
+      console.error('❌ Erro ao conectar ao Redis:', err.message);
+    } else {
+      console.error('❌ Erro ao conectar ao Redis:', err);
+    }
   }
 
   console.log('🔎 Teste de conexões finalizado.\n');
